@@ -11,7 +11,7 @@ spec:
     - name: image-repo
       value: quay.io/chrisley7506/weather-nodejs-app
   pipelineRef:
-    name: nodejs
+    name: weather-nodejs-app
   serviceAccountName: build-bot
   workspaces:
     - name: pipeline-shared-data
