@@ -1,10 +1,10 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: nextjs-app
+  name: weather-node-app
 spec:
   to:
-    name: nextjs-app
+    name: weather-node-app
     kind: Service
     weight: 100
   wildcardPolicy: None

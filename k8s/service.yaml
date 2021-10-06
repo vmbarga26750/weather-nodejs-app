@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nextjs-app
+  name: weather-nodejs-app
 spec:
   type: ClusterIP
   selector:
@@ -11,5 +11,5 @@ spec:
   - name: http
     protocol: TCP
     port: 80
-    targetPort: 3000
+    targetPort: 8080
   sessionAffinity: None
