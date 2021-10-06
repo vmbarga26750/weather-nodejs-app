@@ -1,0 +1,36 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: weather-nodejs-app-pipelinerun-
+spec:
+  params:
+    - name: app-name
+      value: weather-nodejs-app
+    - name: source-repo
+      value: 'https://github.com/chrisley75/weather-nodejs-app' 
+    - name: image-repo
+      value: quay.io/chrisley7506/weather-nodejs-app
+  pipelineRef:
+    name: nodejs
+  serviceAccountName: build-bot
+  workspaces:
+    - name: pipeline-shared-data
+      volumeClaimTemplate:
+        metadata:
+          creationTimestamp: null
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+    - name: gitops-repository
+      volumeClaimTemplate:
+        metadata:
+          creationTimestamp: null
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
