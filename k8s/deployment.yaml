@@ -19,7 +19,7 @@ spec:
       dnsPolicy: ClusterFirst
       schedulerName: default-scheduler
       containers:
-      - name: nextjs-app
+      - name: weather-nodejs-app
         image: image:tag
         ports:
         - name: http
