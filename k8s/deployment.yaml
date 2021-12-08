@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: weather-nodejs-app
 spec:
-  replicas: 1
+  replicas: 10
   selector:
     matchLabels:
       app.kubernetes.io/instance: app-instance
