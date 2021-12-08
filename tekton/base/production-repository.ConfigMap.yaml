@@ -5,7 +5,7 @@ metadata:
 data:
   branch: main
   host: github.com
-  org: cloud-native-garage-method-cohort
+  org: chrisley75
   protocol: https
-  repo: emea-6-production
+  repo: tekton-save-configuration
 
