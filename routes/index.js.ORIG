@@ -3,8 +3,10 @@ const router = express.Router();
 const fetch = require("node-fetch");
 require('dotenv').config();
 const parse = require('json-parser');
+#const OWM_API_KEY = process.env.OWM_API_KEY || 'invalid_key';
 const UNITS = process.env.UNITS || 'metric';
-const OWN_API_KEY = process.env.openweathertoken || 'invalid_key';
+#const OWN_API_KEY = process.env.openweathertoken || 'invalid_key';
+const OWN_API_KEY = '6c1ebd0cd740b528117d2949e935acdb';
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -14,8 +16,8 @@ router.get('/', function(req, res) {
 router.post('/get_weather', async function (req,res) {
   let city = req.body.city;
 
-/*  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${UNITS}&appid=45df74ee2e01cd6b86439fb0d5f4e716`; */
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${UNITS}&appid=${OWN_API_KEY}`;
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${UNITS}&appid=45df74ee2e01cd6b86439fb0d5f4e716`;
+/*  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${UNITS}&appid=${OWN_API_KEY}`;*/
 
 /*
 {"coord":{"lon":2.35,"lat":48.85},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],"base":"stations","main":{"temp":20.22,"feels_like":17.29,"temp_min":19,"temp_max":21.11,"pressure":1012,"humidity":55},"visibility":10000,"wind":{"speed":4.6,"deg":210},"clouds":{"all":75},"dt":1592478902,"sys":{"type":1,"id":6550,"country":"FR","sunrise":1592451997,"sunset":1592510221},"timezone":7200,"id":2988507,"name":"Paris","cod":200}
