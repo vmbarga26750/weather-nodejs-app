@@ -25,7 +25,7 @@ metadata:
   name: weather-alpine
 spec:
   containers:
-  - image: chrisley75/weather-alpine:0.4
+  - image: chrisley75/weather-alpine:0.5
     name: weather-alpine
     ports:
     - containerPort: 8080
